@@ -1,0 +1,40 @@
+<p>products works!</p>
+<select class="form-select" aria-label="Default select example" [(ngModel)]="selectedCategory"
+  (ngModelChange)="onCategoryChange()">
+  <option selected>Open this select menu</option>
+  <option value="fruit">Fruit</option>
+  <option value="vegetable">Vegetable</option>
+  <option value="bakedgoods">Baked Goods</option>
+  <option value="diary">Diary</option>
+  <option value="meat">Meat</option>
+  <option value="herbs">Herbs</option>
+</select>
+
+<div class="container">
+  <div class="row">
+    <div class="col col-md-4 d-flex justify-content-center align-items-center" *ngIf="prods$ | async as prods">
+      <div class="row">
+        <div class="col-lg-4" *ngFor="let product of prods">
+          <div class="card shadow" *ngIf="!selectedCategory">
+            <div class="card-body">
+              <img [src]="product.imageurl" class="card-img-top" alt="">
+              <h5 class="card-title">{{ product.Name }}</h5>
+              <p class="card-text">{{ product.id }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="filteredProducts">
+  <div class="col-lg-4" *ngFor="let filter of filteredProducts">
+    <div class="card">
+<div class="card-body">
+  <h3>{{ filter.Name }}</h3>
+  <!-- <img [src]="filter.imageurl" class="card-img-top" alt=""> -->
+  </div>
+</div>
+    </div>
+</div>

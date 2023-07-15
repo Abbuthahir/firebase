@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "abbuthahir-381cf": {
+      "hosting": {
+        "firebase": [
+          "abbuthahir-381cf"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "abbuthahir-381cf"
+  }
+}
