@@ -10,19 +10,25 @@ import { environment } from 'src/environment/environment';
 import { ProductsComponent } from './products/products.component';
 import { FireService } from './fire.service';
 import { FilterComponent } from './filter/filter.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { CustomApiPracticeComponent } from './custom-api-practice/custom-api-practice.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     FilterComponent,
+    CustomApiPracticeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
