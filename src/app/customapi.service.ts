@@ -6,10 +6,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class CustomapiService {
-  userDetails = {
-    name: 'Abbu',
-    dob: '04/05/2000'
-  }
+
   constructor(private http: HttpClient) { }
 
   postCustomApi(data: any) {
